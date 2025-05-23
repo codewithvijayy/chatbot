@@ -1,10 +1,8 @@
-sentence-transformers
+
 langchain_community
 pypdf
 langchain-google-genai
 langchain-pinecone
 python-dotenv
-langchain-huggingface
-torch
 fastapi
 uvicorn[standard]

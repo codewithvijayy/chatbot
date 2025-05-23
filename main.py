@@ -1,8 +1,7 @@
 from fastapi import FastAPI,HTTPException,WebSocket
-from model.model import  Query
 import asyncio
 from retriever.data_retriever import retrieve_data
-from fastapi.middleware.cors import CORSMiddleware
+from model.model import Query
 
 app = FastAPI()
 
@@ -26,9 +25,16 @@ async def chat_bot(websocket:WebSocket):
                 "data":result,
                 "chatbot":True,
             })
+            print(result)
        
    except Exception as e:
        raise HTTPException(500,detail="internal server issue")
+   
+@app.post("/chat")
+def getapi(query : Query):
+    result = retrieve_data.data_retrieve(query=query.query)
+    return {"data":result}
+    
    
 
 

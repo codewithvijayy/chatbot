@@ -16,7 +16,7 @@ file_path = os.path.join(current_dir,"documents")
 
 loaded_pdf  = extract_data_fromPDf.load_pdf(file=file_path)
 texts_chunks = chunks.chunks(loaded_pdf)
-embed = chunkss_embeddding.chunk_embeddings()
+embed = chunkss_embeddding.embed_texts(texts_chunks)
 
 vectore_store = embedding_store.upload_embeddings_to_database(embeddings=embed,ind_name=index_name,text_chunk=texts_chunks)
 
