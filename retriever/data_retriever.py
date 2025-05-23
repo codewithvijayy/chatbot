@@ -11,7 +11,7 @@ load_dotenv()
 
 class Retrieve():
     def __init__(self):
-        # Keywords/phrases to detect developer-related queries (case-insensitive)
+        
         self.dev_keywords = [
             "who developed", "who made", "who created", "who built",
             "developer of", "made this", "built this", "creator of", "created by",
