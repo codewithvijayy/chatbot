@@ -45,7 +45,7 @@ class Retrieve():
         docs = retriever.invoke(query)
         
         if not docs:
-            return "This information is not trained, Vijay."
+            return "This information is not trained, Vijay.."
 
         context = "\n\n".join(doc.page_content for doc in docs)
 
